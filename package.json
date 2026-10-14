@@ -1,0 +1,22 @@
+{
+  "name": "private-meet-coming-soon",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "preview": "npm run bundle && node .next-bundle/server.mjs",
+    "build": "next build",
+    "bundle": "npx next-bundle",
+    "bundle-wasmer": "npm run bundle && cp wasmer.toml app.yaml .next-bundle/",
+    "start": "node .next-bundle/server.mjs",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "devDependencies": {
+    "next-bundle": "file:tools/next-bundle"
+  }
+}

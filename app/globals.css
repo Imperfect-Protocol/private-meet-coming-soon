@@ -294,6 +294,22 @@ select {
   text-align: center;
 }
 
+.demo-disclaimer-footer a:link {
+  color: rgba(153, 246, 228, 0.85);
+}
+
+.demo-disclaimer-footer a:visited {
+  color: rgba(153, 246, 228, 0.85);
+}
+
+.demo-disclaimer-footer a:hover {
+  color: rgba(153, 246, 228, 0.85);
+}
+
+.demo-disclaimer-footer a:active {
+  color: rgba(153, 246, 228, 0.85);
+}
+
 .welcome {
   min-height: 100vh;
   animation: welcome-in 650ms ease both;

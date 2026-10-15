@@ -1,12 +1,20 @@
+"use client";
+
+import { useState } from "react";
 import SiteNav from "../SiteNav";
 import DemoDisclaimerFooter from "../DemoDisclaimerFooter";
 
-export const metadata = {
-  title: "Contact Us | Private Meet",
-  description: "Contact Imperfect Protocol about Private Meet membership."
-};
-
 export default function ContactPage() {
+  const [copied, setCopied] = useState(false);
+  const emailText = "imperfect-protocol@protonmail.com";
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(emailText).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    });
+  };
+
   return (
     <main className="contact-page">
       <img className="contact-page__image" src="/table.jpg" alt="" />
@@ -17,31 +25,39 @@ export default function ContactPage() {
         <section className="contact-band" id="contact">
           <p className="section-label">Contact</p>
           <h2>Contact Our Team</h2>
-          <p>
-            Send us email to:{" "}
-            <a href="mailto:imperfect-protocol@protonmail.com?subject=Private%20Poker%20Membership">
-              <strong>imperfect-protocol@protonmail.com</strong>
-            </a>
-          </p>
-          <p>
-            or visit our GitHub repository:{" "}
+          <div className="email-row">
+            <span>Send us email to:</span>
+            <div className="email-container">
+              <code className="email__code">
+                {emailText}
+              </code>
+              <button
+                type="button"
+                className="copy-icon-btn"
+                onClick={handleCopy}
+                aria-label="Copy email address"
+                title="Copy email"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+              </button>
+              <span className={`copy-feedback ${copied ? "visible" : ""}`}>Copied!</span>
+            </div>
+          </div>
+          <div>
+            or visit our {" "}
             <a
-              href="https://github.com/Imperfect-Protocol"
+              href="https://github.com/Imperfect-Protocol/private-meet"
               rel="noreferrer"
               target="_blank"
             >
-              github.com/Imperfect-Protocol
-            </a>
-          </p>
-          <div className="contact-actions contact-actions--lower">
-            <a
-              className="contact-button"
-              href="mailto:imperfect-protocol@protonmail.com?subject=Private%20Poker%20Membership"
-            >
-              Contact Us
+              Private Meet repository on GitHub
             </a>
           </div>
         </section>
+
         <DemoDisclaimerFooter />
       </section>
     </main>

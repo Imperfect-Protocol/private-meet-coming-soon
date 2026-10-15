@@ -39,7 +39,7 @@ body {
     linear-gradient(135deg, #050908 0%, #081613 52%, #0b221d 100%);
 }
 
-body > main {
+body>main {
   flex: 1 0 auto;
 }
 
@@ -76,8 +76,7 @@ select {
 }
 
 .splash__image {
-  filter: grayscale(0.35) sepia(0.4) hue-rotate(120deg) saturate(1.4)
-    brightness(0.64);
+  filter: grayscale(0.35) sepia(0.4) hue-rotate(120deg) saturate(1.4) brightness(0.64);
   opacity: 0.55;
   z-index: -3;
 }
@@ -414,8 +413,7 @@ select {
 }
 
 .welcome__image {
-  filter: grayscale(0.1) sepia(0.5) hue-rotate(120deg) saturate(1.55)
-    brightness(0.7);
+  filter: grayscale(0.1) sepia(0.5) hue-rotate(120deg) saturate(1.55) brightness(0.7);
   z-index: -3;
 }
 
@@ -731,8 +729,7 @@ select {
   height: 100%;
   object-fit: cover;
   border-radius: 100px;
-  filter: grayscale(0.18) sepia(0.55) hue-rotate(120deg) saturate(1.45)
-    brightness(0.72);
+  filter: grayscale(0.18) sepia(0.55) hue-rotate(120deg) saturate(1.45) brightness(0.72);
 }
 
 .mock-table__shade {
@@ -1136,11 +1133,11 @@ select {
   border-top: 1px solid var(--line);
 }
 
-.difference > div:last-child {
+.difference>div:last-child {
   text-align: right;
 }
 
-.difference > div:last-child h2 {
+.difference>div:last-child h2 {
   margin-left: auto;
 }
 
@@ -1660,6 +1657,11 @@ select {
   margin-top: 42px;
 }
 
+.contact-actions--right {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
 .contact-button-blue {
   width: fit-content;
   min-height: 52px;
@@ -1697,9 +1699,9 @@ select {
   border: 1px solid rgba(153, 246, 228, 0.72);
   border-radius: 8px;
   background:
-    radial-gradient(circle at 30% 15%, rgba(255, 255, 255, 0.8), transparent 18%),
-    linear-gradient(135deg, #99f6e4, #14b8a6 34%, #0d9488 78%);
-  color: #042f2e !important;
+    radial-gradient(circle at 25% 12.5%, rgba(255, 255, 255, 1.0) 6%, transparent 18%),
+    linear-gradient(135deg, #99f6e490, #14b8a650 34%, #0d948820 78%);
+  color: #b4f7f5 !important;
   box-shadow:
     0 0 22px rgba(20, 184, 166, 0.3),
     0 16px 34px rgba(0, 0, 0, 0.3);
@@ -1737,8 +1739,7 @@ select {
   height: 100%;
   object-fit: cover;
   z-index: -3;
-  filter: grayscale(0.12) sepia(0.55) hue-rotate(120deg) saturate(1.45)
-    brightness(0.46);
+  filter: grayscale(0.12) sepia(0.55) hue-rotate(120deg) saturate(1.45) brightness(0.46);
 }
 
 .contact-page__shade {
@@ -1760,6 +1761,73 @@ select {
   padding: clamp(58px, 11vw, 130px) 0 0;
 }
 
+/* Fixed selector: targets the code element directly */
+.email__code {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  border: 1px solid rgba(240, 253, 244, 0.24);
+  border-radius: 8px;
+  background: rgba(4, 7, 6, 0.66);
+  color: #99f6e4;
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+/* Layout for the email row and copy interaction */
+.email-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.email-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.copy-icon-btn {
+  background: rgba(4, 7, 6, 0.66);
+  border: 1px solid rgba(240, 253, 244, 0.24);
+  color: #99f6e4;
+  cursor: pointer;
+  height: 36px;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.copy-icon-btn:hover {
+  background: rgba(153, 246, 228, 0.1);
+  border-color: rgba(153, 246, 228, 0.5);
+  color: #ffffff;
+}
+
+.copy-feedback {
+  font-size: 0.75rem;
+  color: #2dd4bf;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  margin-left: 4px;
+}
+
+.copy-feedback.visible {
+  opacity: 1;
+}
+
 .test-wallet-page {
   position: relative;
   min-height: 100vh;
@@ -1777,8 +1845,7 @@ select {
   height: 100%;
   object-fit: cover;
   z-index: -3;
-  filter: grayscale(0.16) sepia(0.48) hue-rotate(120deg) saturate(1.35)
-    brightness(0.42);
+  filter: grayscale(0.16) sepia(0.48) hue-rotate(120deg) saturate(1.35) brightness(0.42);
 }
 
 .test-wallet-page__shade {
@@ -1854,7 +1921,7 @@ select {
     rgba(4, 13, 22, 0.78);
 }
 
-.wallet-step > strong {
+.wallet-step>strong {
   color: var(--red-hot);
   font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
   font-size: clamp(1.7rem, 4vw, 3rem);
@@ -1968,8 +2035,7 @@ select {
   height: 100%;
   object-fit: cover;
   z-index: -3;
-  filter: grayscale(0.18) sepia(0.44) hue-rotate(120deg) saturate(1.32)
-    brightness(0.42);
+  filter: grayscale(0.18) sepia(0.44) hue-rotate(120deg) saturate(1.32) brightness(0.42);
 }
 
 .builder-page__shade {
@@ -2096,6 +2162,7 @@ select {
     opacity: 0;
     transform: translateY(12px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -2107,6 +2174,7 @@ select {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

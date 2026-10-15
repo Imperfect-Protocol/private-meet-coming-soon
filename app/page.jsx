@@ -20,6 +20,15 @@ export default function Home() {
                 <span key={item}>{item}</span>
               ))}
             </div>
+            <div className="contact-actions contact-actions--right">
+              <a
+                className="contact-button"
+                href="https://privatebooking.imperfectprotocol.ie/book/imperfectprotocol-dbbbb9"
+                target="_blank"
+              >
+                Book Experience
+              </a>
+            </div>
           </div>
         </div>
 

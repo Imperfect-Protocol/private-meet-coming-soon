@@ -6,7 +6,7 @@ import DemoDisclaimerFooter from "../DemoDisclaimerFooter";
 
 export default function ContactPage() {
   const [copied, setCopied] = useState(false);
-  const emailText = "imperfect-protocol@protonmail.com";
+  const emailText = "info@contact.imperfectprotocol.ie";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(emailText).then(() => {

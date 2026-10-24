@@ -26,7 +26,7 @@ export default function Home() {
                 href="https://privatebooking.imperfectprotocol.ie/book/imperfectprotocol-dbbbb9"
                 target="_blank"
               >
-                Book Experience
+                Book Demo
               </a>
             </div>
           </div>

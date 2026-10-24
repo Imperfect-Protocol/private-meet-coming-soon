@@ -1,7 +1,7 @@
 import SiteNav from "./SiteNav";
 import DemoDisclaimerFooter from "./DemoDisclaimerFooter";
 
-const heroSignals = ["Peer-to-Peer", "Encrypted Video", "Ice Breaker Games", "Zero-Trust"];
+const heroSignals = ["Peer-to-Peer", "Zero-Trust", "Encrypted", "Ice Breaker Games"];
 
 export default function Home() {
   return (

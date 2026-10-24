@@ -11,8 +11,8 @@ export default function SplashScreen({ onDone }) {
 
   useEffect(() => {
     const showDisclaimerTimer = window.setTimeout(() => setShowDisclaimer(true), 500);
-    const fadeLogoTimer = window.setTimeout(() => setFadeLogo(true), 2000);
-    const doneTimer = window.setTimeout(() => onDone?.(), 3250);
+    const fadeLogoTimer = window.setTimeout(() => setFadeLogo(true), 1500);
+    const doneTimer = window.setTimeout(() => onDone?.(), 3000);
 
     return () => {
       window.clearTimeout(showDisclaimerTimer);
